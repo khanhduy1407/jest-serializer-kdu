@@ -1,0 +1,9 @@
+{
+    "extends": [
+      "standard",
+      "plugin:kdu/recommended"
+    ],
+    "env": {
+      "jest": true
+    }
+}

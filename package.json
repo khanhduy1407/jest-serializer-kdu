@@ -1,0 +1,65 @@
+{
+  "name": "jest-serializer-kdu",
+  "description": "A jest serializer for Kdu snapshots",
+  "version": "2.0.2-alpha.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.kdu .",
+    "lint:fix": "npm run lint -- --fix",
+    "publish": "semantic-release",
+    "test": "npm run lint && npm run unit",
+    "unit": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhduy1407/jest-serializer-kdu.git"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "NKDuy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/khanhduy1407/jest-serializer-kdu/issues"
+  },
+  "homepage": "https://github.com/khanhduy1407/jest-serializer-kdu#readme",
+  "devDependencies": {
+    "@kdujs/test-utils": "^1.0.0-beta.11",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "conventional-changelog": "1.1.6",
+    "eslint": "4.10.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-kdu": "^2.1.0-rc.0",
+    "jest": "^22.4.2",
+    "kdu": "2.5.13-alpha.0",
+    "kdu-jest": "1.0.2-rc.0",
+    "kdu-template-compiler": "2.5.13-alpha.0",
+    "semantic-release": "^15.5.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "kdu"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.kdu$": "<rootDir>/node_modules/kdu-jest"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/index.js"
+    ]
+  },
+  "dependencies": {
+    "pretty": "2.0.0"
+  }
+}
